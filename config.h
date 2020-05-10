@@ -8,23 +8,15 @@ static const char *fonts[] = {
 	"monospace:size=16"
 };
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
-static const char col_black[]		= "#282a2e"; /* black   */
-static const char col_red[]			= "#a54242"; /* red     */
-static const char col_green[]		= "#8c9440"; /* green   */
-static const char col_yellow[]		= "#de935f"; /* yellow  */
-static const char col_blue[]		= "#5f819d"; /* blue    */
-static const char col_magenta[]		= "#85678f"; /* magenta */
-static const char col_cyan[]		= "#5e8d87"; /* cyan    */
-static const char col_white[]		= "#707880"; /* white   */
-static const char col_bg[]			= "#1d1f21"; /* background */
-static const char col_fg[]			= "#c5c8c6"; /* foreground */
+
+/* Gruvbox colorscheme */
 static const char *colors[SchemeLast][2] = {
 	/*							fg				bg       */
-	[SchemeNorm]			= {	col_blue,		col_black },
-	[SchemeSel]				= {	col_bg,			col_blue },
-	[SchemeSelHighlight]	= { col_red,		col_blue },
-	[SchemeNormHighlight]	= { col_red,		col_bg },
-	[SchemeOut]				= { col_black,		col_cyan },
+	[SchemeNorm]			= {"#a89984", "#282828"},
+	[SchemeSel]				= {"#fbf1c7", "#282828"},
+	[SchemeSelHighlight]	= {"#fb4934", "#282828"},
+	[SchemeNormHighlight]	= {"#fb4934", "#282828" },
+	[SchemeOut]				= {"#a89984", "#a89984" },
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 0;
@@ -36,4 +28,4 @@ static unsigned int lines      = 0;
 static const char worddelimiters[] = " ";
 
 /* Size of the window border */
-static const unsigned int border_width = 4;
+static const unsigned int border_width = 2;
