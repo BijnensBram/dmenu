@@ -3,6 +3,7 @@
 
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
 static int fuzzy = 1;                      /* -F  option; if 0, dmenu doesn't use fuzzy matching     */
+static const int bordercol = 11049348; /* int value of the color should fix this some time */
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static const char *fonts[] = {
 	"monospace:size=16"
@@ -15,8 +16,8 @@ static const char *colors[SchemeLast][2] = {
 	[SchemeNorm]			= {"#a89984", "#282828"},
 	[SchemeSel]				= {"#fbf1c7", "#282828"},
 	[SchemeSelHighlight]	= {"#fb4934", "#282828"},
-	[SchemeNormHighlight]	= {"#fb4934", "#282828" },
-	[SchemeOut]				= {"#a89984", "#a89984" },
+	[SchemeNormHighlight]	= {"#fb4934", "#282828"},
+	[SchemeOut]				= {"#a89984", "#a89984"},
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 0;
