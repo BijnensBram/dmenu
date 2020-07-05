@@ -937,6 +937,21 @@ setup(void)
 	XSetWindowBorder(dpy, win, bordercol);
 	XSetClassHint(dpy, win, &ch);
 
+   /* Set window properties */
+   if (win) {
+       {
+           char *NAME = "dmenu";
+           XTextProperty tprop_name;
+           if (Success == Xutf8TextListToTextProperty(di->dpy, &NAME, 1,
+                       XStringStyle, &tprop_name))
+               XSetWMName(di->dpy, win, &tprop_name);
+       }
+       {
+           XClassHint HINT = { "dmenu", "Dmenu" };
+           XSetClassHint(di->dpy, win, &HINT);
+       }
+   }
+
 
 	/* input methods */
 	if ((xim = XOpenIM(dpy, NULL, NULL, NULL)) == NULL)
